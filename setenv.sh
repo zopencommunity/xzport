@@ -1,23 +1,22 @@
 #!/bin/sh
-#set -x
-
+#
+# Set up environment variables for general build tool to operate
+#
 if ! [ -f ./setenv.sh ]; then
 	echo "Need to source from the setenv.sh directory" >&2
-else
-	export _BPXK_AUTOCVT="ON"
-	export _CEE_RUNOPTS="FILETAG(AUTOCVT,AUTOTAG),POSIX(ON),TERMTHDACT(MSG)"
-	export _TAG_REDIR_ERR="txt"
-	export _TAG_REDIR_IN="txt"
-	export _TAG_REDIR_OUT="txt"
-
-	export XZ_VRM="xz-5.2.5"
-	export XZ_ROOT="${PWD}"
-	
-        export PATH="${XZ_ROOT}/bin:$PATH"
-
-	export XZ_MIRROR="https://tukaani.org/xz" 
-	export XZ_CERT="${XZ_ROOT}/xz.cert"
-
-	fsroot=$( basename $HOME )                         
-	export XZ_PROD="/${fsroot}/xzprod"     
+	return 0
 fi
+
+export PORT_ROOT="${PWD}"
+unset PORT_TARBALL
+unset PORT_GIT
+export PORT_TARBALL="Y"
+#export PORT_GIT="Y"
+export PORT_TARBALL_URL="https://tukaani.org/xz/xz-5.2.5.tar.gz"
+export PORT_TARBALL_DEPS="curl gzip make"
+
+export PORT_GIT_URL="https://git.tukaani.org/xz.git"
+export PORT_GIT_DEPS="git make"
+
+export PORT_EXTRA_CFLAGS=""
+export PORT_EXTRA_LDFLAGS=""
