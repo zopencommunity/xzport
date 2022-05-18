@@ -8,10 +8,7 @@ if ! [ -f ./setenv.sh ]; then
 fi
 
 export PORT_ROOT="${PWD}"
-unset PORT_TARBALL
-unset PORT_GIT
-export PORT_TARBALL="Y"
-#export PORT_GIT="Y"
+export PORT_TYPE="TARBALL"
 export PORT_TARBALL_URL="https://tukaani.org/xz/xz-5.2.5.tar.gz"
 export PORT_TARBALL_DEPS="curl gzip make"
 
