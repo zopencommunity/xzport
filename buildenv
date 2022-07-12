@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# Set up environment variables for general build tool to operate
+#
+if ! [ -f ./buildenv ]; then
+	echo "Need to source from the buildenv directory" >&2
+	return 0
+fi
+
+export ZOPEN_ROOT="${PWD}"
+export ZOPEN_TYPE="TARBALL"
+export ZOPEN_TARBALL_URL="https://tukaani.org/xz/xz-5.2.5.tar.gz"
+export ZOPEN_TARBALL_DEPS="curl gzip make"
+
+export ZOPEN_GIT_URL="https://git.tukaani.org/xz.git"
+export ZOPEN_GIT_DEPS="git make"
+
+export ZOPEN_EXTRA_CFLAGS=""
+export ZOPEN_EXTRA_LDFLAGS=""
