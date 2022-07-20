@@ -11,6 +11,7 @@ export ZOPEN_ROOT="${PWD}"
 export ZOPEN_TYPE="TARBALL"
 export ZOPEN_TARBALL_URL="https://tukaani.org/xz/xz-5.2.5.tar.gz"
 export ZOPEN_TARBALL_DEPS="curl gzip make"
+export ZOPEN_BOOTSTRAP=skip
 
 export ZOPEN_GIT_URL="https://git.tukaani.org/xz.git"
 export ZOPEN_GIT_DEPS="git make"
