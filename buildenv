@@ -15,6 +15,3 @@ export ZOPEN_BOOTSTRAP=skip
 
 export ZOPEN_GIT_URL="https://git.tukaani.org/xz.git"
 export ZOPEN_GIT_DEPS="git make"
-
-export ZOPEN_EXTRA_CFLAGS=""
-export ZOPEN_EXTRA_LDFLAGS=""
