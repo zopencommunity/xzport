@@ -9,3 +9,9 @@ export ZOPEN_BOOTSTRAP=skip
 
 export ZOPEN_GIT_URL="https://git.tukaani.org/xz.git"
 export ZOPEN_GIT_DEPS="git make"
+
+zopen_check_results()
+{
+  return 3 # non-functional
+}
+
