@@ -3,15 +3,22 @@
 #
 export ZOPEN_TYPE="TARBALL"
 export ZOPEN_TARBALL_URL="https://tukaani.org/xz/xz-5.2.5.tar.gz"
-export ZOPEN_TARBALL_DEPS="curl gzip make"
+export ZOPEN_TARBALL_DEPS="curl gzip make zoslib"
 export ZOPEN_BOOTSTRAP=skip
-export ZOPEN_CHECK="skip"
 
 export ZOPEN_GIT_URL="https://git.tukaani.org/xz.git"
 export ZOPEN_GIT_DEPS="git make"
 
 zopen_check_results()
 {
-  return 3 # non-functional
-}
+  chk="$1/$2_check.log"
+  successes=$(egrep "^PASS:" "${chk}" | wc -l | xargs)
+  failures=$(egrep "^FAIL:" "${chk}" | wc -l | xargs)
+  totalTests=$((failures+successes))
 
+cat <<ZZ
+actualFailures:$failures
+totalTests:$totalTests
+expectedFailures:2
+ZZ
+}
