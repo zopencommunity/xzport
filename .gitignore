@@ -53,3 +53,5 @@ dkms.conf
 
 xz-5.2.5/
 xz-5.2.5.tar
+install
+log.STABLE
