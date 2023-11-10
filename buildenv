@@ -1,8 +1,8 @@
-#
-# Set up environment variables for general build tool to operate
-#
+# bump: xz-version /XZ_VERSION="(.*)"/ https://git.tukaani.org/xz.git|semver:*
+XZ_VERSION="5.2.5"
+
 export ZOPEN_BUILD_LINE="STABLE"
-export ZOPEN_STABLE_URL="https://tukaani.org/xz/xz-5.2.5.tar.gz"
+export ZOPEN_STABLE_URL="https://tukaani.org/xz/xz-${XZ_VERSION}.tar.gz"
 export ZOPEN_STABLE_DEPS="curl gzip make zoslib"
 export ZOPEN_BOOTSTRAP=skip
 export ZOPEN_COMP=CLANG
