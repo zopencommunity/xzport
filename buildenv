@@ -1,5 +1,5 @@
 # bump: xz-version /XZ_VERSION="(.*)"/ https://git.tukaani.org/xz.git|semver:*
-XZ_VERSION="5.2.5"
+XZ_VERSION="5.4.5"
 
 export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_STABLE_URL="https://tukaani.org/xz/xz-${XZ_VERSION}.tar.gz"
