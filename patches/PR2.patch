@@ -1,0 +1,19 @@
+diff --git a/src/xz/hardware.c b/src/xz/hardware.c
+index 3a1a709..8bd74df 100644
+--- a/src/xz/hardware.c
++++ b/src/xz/hardware.c
+@@ -368,8 +368,13 @@ hardware_init(void)
+ 		struct rlimit rl;
+ 		if (getrlimit(resources[i], &rl) == 0
+ 				&& rl.rlim_cur != RLIM_INFINITY
++#ifdef RLIM_SAVED_CUR
+ 				&& rl.rlim_cur != RLIM_SAVED_CUR
+-				&& rl.rlim_cur != RLIM_SAVED_MAX) {
++#endif
++#ifdef RLIM_SAVED_MAX
++				&& rl.rlim_cur != RLIM_SAVED_MAX
++#endif
++				) {
+ #ifdef __clang__
+ #	pragma GCC diagnostic pop
+ #endif
