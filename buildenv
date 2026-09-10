@@ -1,8 +1,8 @@
-# bump: xz-version /XZ_VERSION="(.*)"/ https://git.tukaani.org/xz.git|semver:*
+# bump: xz-version /XZ_VERSION="(.*)"/ https://github.com/tukaani-project/xz.git|semver:*
 XZ_VERSION="5.8.4"
 
 export ZOPEN_BUILD_LINE="STABLE"
-export ZOPEN_STABLE_URL="https://tukaani.org/xz/xz-${XZ_VERSION}.tar.gz"
+export ZOPEN_STABLE_URL="https://github.com/tukaani-project/xz/releases/download/v${XZ_VERSION}/xz-${XZ_VERSION}.tar.gz"
 export ZOPEN_STABLE_DEPS="make"
 export ZOPEN_BOOTSTRAP=skip
 export ZOPEN_COMP=CLANG
